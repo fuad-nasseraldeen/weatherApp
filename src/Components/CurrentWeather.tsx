@@ -34,14 +34,19 @@ const CurrentWeather = () => {
         };
     }, [dispatch, currentWeather]);
 
-    const { weather, sys, name, main, id } = currentWeather;
-    const temp_unit = weather_unit?.temp;
-    const pressure_unit = weather_unit?.pressure
+    const { weather, sys, name, main, id } = currentWeather
+    const country = !_.isEmpty(sys) && sys.country
+    const temp_unit = weather_unit.temp
+    const pressure_unit = weather_unit.pressure
+    const temp = !_.isEmpty(main) && main.temp
     const currentDay = getDay();
     const backgroundImage = show_background(id)
-    const pressure = (main?.pressure)?.toFixed(1)
-    const sunrise = new Date(sys?.sunrise * 1000)?.toLocaleTimeString()
-    const sunset = new Date(sys?.sunset * 1000)?.toLocaleTimeString()
+    const description = !_.isEmpty(weather) && weather[0] && weather[0].description
+    const icon = !_.isEmpty(weather) && weather[0] && weather[0].icon
+    const _main = !_.isEmpty(main) && main
+    const pressure = !_.isEmpty(main) && main.pressure.toFixed(1)
+    const sunrise = !_.isEmpty(sys) && new Date(sys.sunrise * 1000).toLocaleTimeString()
+    const sunset = !_.isEmpty(sys) && new Date(sys.sunset * 1000).toLocaleTimeString()
     return (
         <section
             id="currentWeather"
@@ -55,26 +60,26 @@ const CurrentWeather = () => {
             <div className="currentWeather__details">
                 <div className='currentWeather__details-basic currentWeather-font'>
                     <h1 id="city" className=''>{name}</h1>
-                    <h1 id="country">{sys?.country}</h1>
+                    <h1 id="country">{country}</h1>
                     <h3 id="date"><span id="date_day"> {currentDay}</span> </h3>
                     <h3><span id="date_time">{currentTime}</span></h3>
                 </div>
                 <div className='currentWeather__details-spics currentWeather-font'>
-                    <img id="weather_image" src={`https://openweathermap.org/img/w/${weather?.[0]?.icon}.png`} alt="icon for current weather condition" />
+                    <img id="weather_image" src={`https://openweathermap.org/img/w/${icon}.png`} alt="icon for current weather condition" />
                     <div id="weather_description">
-                        <h3 id="weather_description">{weather?.[0].description}</h3>
+                        <h3 id="weather_description">{description}</h3>
                         <h3 id="temp_main">
-                            <span id="temp_main_val">{main?.temp}</span> &deg; {temp_unit}</h3>
+                            <span id="temp_main_val">{temp}</span> &deg; {temp_unit}</h3>
                     </div>
                 </div>
             </div>
             <div className="currentWeather__description currentWeather-sub-font">
                 {/* <h3 id="panel_top_content">Condition: {weather?.[0].main}</h3> */}
                 <div className="temp-description">
-                    <h3>Max Temprature: {main?.temp_max} &deg; {temp_unit}</h3>
-                    <h3>Min Temprature: {main?.temp_min} &deg; {temp_unit}</h3>
-                    <h3>Feels Like: {main?.feels_like} &deg; {temp_unit}</h3>
-                    <h3>Humidity: {main?.humidity} %</h3>
+                    <h3>Max Temprature: {_main.temp_max} &deg; {temp_unit}</h3>
+                    <h3>Min Temprature: {_main.temp_min} &deg; {temp_unit}</h3>
+                    <h3>Feels Like: {_main.feels_like} &deg; {temp_unit}</h3>
+                    <h3>Humidity: {_main.humidity} %</h3>
                 </div>
                 <div className="time-description">
                     <h3>pressure: {pressure}{pressure_unit}</h3>
