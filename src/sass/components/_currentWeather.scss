@@ -1,5 +1,6 @@
 .currentWeather {
     height: 100%;
+
     &__details {
         background: rgba($color-white, .5);
         height: 30rem;
@@ -9,6 +10,10 @@
         justify-self: center;
         justify-content: space-around;
         border-radius: 5rem;
+
+        @include respond(phone) {
+            width: 70%;
+        }
 
         &-basic {
             display: flex;
@@ -25,31 +30,32 @@
             align-self: center;
 
             #weather_image {
-                width: 120px;
-                height: 120px;
+                width: 12rem;
+                height: 12rem;
             }
 
             #weather_description {
                 -webkit-flex: 1.4;
                 -ms-flex: 1.4;
                 flex: 1.4;
-                font-size: 30px;
+                font-size: 3rem;
                 padding: 0 1vw;
             }
 
             #temp_main {
-                -webkit-flex: 1;
-                -ms-flex: 1;
-                flex: 1;
+                // -webkit-flex: 1;
+                // -ms-flex: 1;
+                // flex: 1;
             }
 
             #temp_main_val {
-                font-size: 50px;
+                font-size: 5rem;
             }
         }
     }
 
     &__description {
+        width: 100%;
         display: flex;
         background: azure;
         justify-content: space-around;

@@ -3,10 +3,14 @@
     // background-color: $color-instagram;
     background-image: url('../../../public/weather.avif');
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     align-self: center;
-    justify-self: center;
     justify-content: space-around;
+    transform: translate(0px, 4rem);
+
+    @include respond(tab-port) {
+        transform: none
+    }
 
     &__container {
         display: flex;
@@ -33,6 +37,12 @@
             left: 50%;
             transform: translate(-50%, 0%);
 
+            @include respond(phone) {
+                width: 75%;
+                height: 25rem;
+                transform: translate(-50%, 20%);
+            }
+
             .content {
                 align-self: center;
                 display: flex;
@@ -43,7 +53,13 @@
             img {
                 width: 200%;
                 align-self: center;
+
+                @include respond(phone) {
+                    width: 150%;
+                }
             }
+
+
         }
 
         .search {
