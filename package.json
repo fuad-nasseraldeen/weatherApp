@@ -47,6 +47,6 @@
     "@typescript-eslint/parser": "^6.9.1",
     "eslint": "^8.52.0",
     "node-sass": "^9.0.0",
-    "typescript": "^5.2.2"
+    "typescript": "^3.2.1"
   }
 }
