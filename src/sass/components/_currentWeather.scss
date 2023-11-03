@@ -1,0 +1,71 @@
+.currentWeather {
+    height: 100%;
+    &__details {
+        background: rgba($color-white, .5);
+        height: 30rem;
+        width: 80rem;
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        justify-content: space-around;
+        border-radius: 5rem;
+
+        &-basic {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 6rem;
+        }
+
+        &-spics {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-self: center;
+
+            #weather_image {
+                width: 120px;
+                height: 120px;
+            }
+
+            #weather_description {
+                -webkit-flex: 1.4;
+                -ms-flex: 1.4;
+                flex: 1.4;
+                font-size: 30px;
+                padding: 0 1vw;
+            }
+
+            #temp_main {
+                -webkit-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+            }
+
+            #temp_main_val {
+                font-size: 50px;
+            }
+        }
+    }
+
+    &__description {
+        display: flex;
+        background: azure;
+        justify-content: space-around;
+
+        .temp-description {
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .time-description {
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+}

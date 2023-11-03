@@ -1,17 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { configureStore } from '@reduxjs/toolkit'; // Import configureStore from Redux Toolkit
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+import './sass/main.scss'
+import WeatherApp from './Components/Weather.tsx'
+import CurrentWeather from './Components/CurrentWeather'
+import reportWebVitals from './reportWebVitals'
+
+import rootReducer from './reducers/weather'
+const store = configureStore({
+  reducer: rootReducer,
+})
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+    <Provider store={store}>
+      <div className='container'>
+        <CurrentWeather />
+        <WeatherApp />
+      </div>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root'),
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals()

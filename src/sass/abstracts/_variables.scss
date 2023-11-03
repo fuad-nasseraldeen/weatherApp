@@ -1,0 +1,136 @@
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+// COLOR VARIABLES
+
+
+
+
+$color-grey-dark-11: #54483A;
+$color-grey-dark-12: #6D5D4B;
+
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-blue-primary-1: #4b76c8;
+$color-blue-primary-2: #1f4691;
+$color-blue-primary-3: #172557;
+$color-blue-primary-4: #07123A;
+$color-blue-primary-5: #2653AF;
+$color-blue-primary-6: #1b3a79;
+
+$color-secondary-grey: #6D5D4B;
+$color-grey-dark-1: #d9d9d994;
+$color-grey-dark: #bebebe;
+$color-grey-light: #ebebeb;
+
+
+$color-blue-light: #3da5e0;
+$color-blue-light-1: #badefc;
+
+$color-blue-dark-2: #0078D4;
+$color-blue-dark-1: #1c97fc;
+$color-blue-dark: #325ea5;
+
+// SOCIAL MEDIA VARIABLES
+$color-linkedin: #0078D4;
+$color-whatsapp: #31B34A;
+$color-github: #000;
+$color-instagram: #cc39a4;
+$color-gmail: #d14836;
+
+
+$black: #000;
+$white: #fff;
+$greyLight: #e1e3e5;
+$greyMedium: #8a959e;
+$greyDark: #323a45;
+$purple: #9b59b6;
+$orange: #ff6d3a;
+$blue: #3498db;
+$yellow: #d6a514;
+$purple-dark: #5465ff;
+$defaultTransition: all 250ms ease-in-out;
+
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Gumela';
+$font-display-1: "EgyptiaRoundItalic W00 Regular";
+$font-display-2: "KG Like A Skyscraper W00 Reg";
+$font-display-3: "KTF-Roadstar V1";
+$font-display-4: 'Josefin Sans', sans-serif;
+$font-display-5: "Anonymous Pro", sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px
+
+
+@font-face {
+    font-family: "KTF-Roadstar V1";
+    src: url("https://db.onlinewebfonts.com/t/8691b2506c4589747e7c7c5d86b9be3c.eot");
+    src: url("https://db.onlinewebfonts.com/t/8691b2506c4589747e7c7c5d86b9be3c.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/8691b2506c4589747e7c7c5d86b9be3c.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/8691b2506c4589747e7c7c5d86b9be3c.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/8691b2506c4589747e7c7c5d86b9be3c.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/8691b2506c4589747e7c7c5d86b9be3c.svg#KTF-Roadstar V1")format("svg");
+}
+
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
+
+@font-face {
+    font-family: "Gumela";
+    src: url("https://db.onlinewebfonts.com/t/00561b492d88a5287a5def1e83a34882.eot");
+    src: url("https://db.onlinewebfonts.com/t/00561b492d88a5287a5def1e83a34882.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/00561b492d88a5287a5def1e83a34882.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/00561b492d88a5287a5def1e83a34882.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/00561b492d88a5287a5def1e83a34882.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/00561b492d88a5287a5def1e83a34882.svg#Gumela")format("svg");
+}
+
+@font-face {
+    font-family: "EgyptiaRoundItalic W00 Regular";
+    src: url("https://db.onlinewebfonts.com/t/1f7a973a3660d6d59718cb04e3ba17bf.eot");
+    src: url("https://db.onlinewebfonts.com/t/1f7a973a3660d6d59718cb04e3ba17bf.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/1f7a973a3660d6d59718cb04e3ba17bf.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/1f7a973a3660d6d59718cb04e3ba17bf.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/1f7a973a3660d6d59718cb04e3ba17bf.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/1f7a973a3660d6d59718cb04e3ba17bf.svg#EgyptiaRoundItalic W00 Regular")format("svg");
+}
+
+@font-face {
+    font-family: "KG Like A Skyscraper W00 Reg";
+    src: url("https://db.onlinewebfonts.com/t/fb46305b949c7f496b83884a722581cf.eot");
+    src: url("https://db.onlinewebfonts.com/t/fb46305b949c7f496b83884a722581cf.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/fb46305b949c7f496b83884a722581cf.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/fb46305b949c7f496b83884a722581cf.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/fb46305b949c7f496b83884a722581cf.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/fb46305b949c7f496b83884a722581cf.svg#KG Like A Skyscraper W00 Reg")format("svg");
+}

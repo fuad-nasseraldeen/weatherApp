@@ -1,0 +1,81 @@
+.weather {
+    height: 100%;
+    // background-color: $color-instagram;
+    background-image: url('../../../public/weather.avif');
+    background-size: cover;
+    background-position: center;
+    align-self: center;
+    justify-self: center;
+    justify-content: space-around;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5rem;
+
+        .z-index-999 {
+            z-index: 999;
+        }
+
+        &-status {
+            background: rgba($color-white, .5);
+            height: 30rem;
+            width: 80rem;
+            display: flex;
+            align-self: center;
+            justify-self: center;
+            justify-content: space-around;
+            border-radius: 5rem;
+            grid-auto-flow: column;
+            position: absolute;
+            // top: 50%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+
+            .content {
+                align-self: center;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            img {
+                width: 200%;
+                align-self: center;
+            }
+        }
+
+        .search {
+            grid-auto-flow: column;
+            transform: translate(0px, 3rem);
+
+            input[type="text"] {
+                height: 7rem;
+                width: 35rem;
+                padding: 1rem;
+                border: none;
+                border-radius: 2rem;
+                box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+                outline: none;
+            }
+
+            button[type="submit"] {
+                height: 7rem;
+                background-color: #4e99e9;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                padding: 2rem;
+                border-radius: 2rem;
+                box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+                transition: .9s ease;
+                transform: translate(-40%, 0%);
+
+                &:hover {
+                    transform: scale(1.1) translate(-40%, 0%);
+                }
+            }
+        }
+    }
+}
