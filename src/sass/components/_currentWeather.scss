@@ -25,6 +25,10 @@
             #city,
             #country {
                 padding-left: 5rem;
+
+                @include respond(phone) {
+                    padding-left: 2rem;
+                }
             }
         }
 
@@ -32,18 +36,20 @@
             display: flex;
             text-align: center;
             align-self: center;
+            padding-right: 2rem;
+
+            @include respond(phone) {
+                flex-direction: column-reverse;
+            }
 
             #weather_image {
                 width: 12rem;
                 height: 12rem;
-            }
 
-            #weather_description {
-                -webkit-flex: 1.4;
-                -ms-flex: 1.4;
-                flex: 1.4;
-                font-size: 3rem;
-                padding: 0 1vw;
+                @include respond(phone) {
+                    width: 10rem;
+                    height: 10rem;
+                }
             }
         }
     }
