@@ -31,7 +31,7 @@ const WeatherApp = () => {
     const fetchWeather = async () => {
 
         try {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchWeatherByCity}&appid=${apiKey}`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchWeatherByCity}&appid=${apiKey}`);
             if (!response.ok) {
                 throw new Error(`Failed to fetch weather data: ${response.statusText}`);
             }
@@ -50,7 +50,6 @@ const WeatherApp = () => {
         } catch (error) {
             console.error('Error fetching weather data:', error);
             // You can handle the error here, e.g., show an error message to the user.
-
             setModalBody("Error fetching weather data, please try again later")
             setIsModalOpen(true)
         }
@@ -72,8 +71,8 @@ const WeatherApp = () => {
     const visibile = temperature || cityName || weatherStatus
     return (
         <section id="weather" className="weather">
+            {modal()}
             <div className="weather__container header">
-                {modal()}
                 <div className="search">
                     <input id="search-name" type="text" className="form-control header" placeholder="Enter city: London, UK" value={searchWeatherByCity || ''} onChange={e => setSearchWeatherByCity(e.target.value)} />
                     <button id="submit-btn" type="submit" className="btn btn-danger header" onClick={() => handleSearchWeather()}>Search</button>
