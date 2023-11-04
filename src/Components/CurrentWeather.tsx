@@ -54,38 +54,42 @@ const CurrentWeather = () => {
             style={{
                 backgroundImage: backgroundImage,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundPosition: 'center',
+                height: '50vh'
             }}
         >
             <div className="currentWeather__details">
                 <div className='currentWeather__details-basic currentWeather-font'>
-                    <h1 id="city" className=''>{name}</h1>
-                    <h1 id="country">{country}</h1>
+                    <h3 id="city">{name}</h3>
+                    <h3 id="country">{country}</h3>
+                </div>
+                <div className='currentWeather__details-basic currentWeather-font'>
                     <h3 id="date"><span id="date_day"> {currentDay}</span> </h3>
                     <h3><span id="date_time">{currentTime}</span></h3>
                 </div>
                 <div className='currentWeather__details-spics currentWeather-font'>
-                    <img id="weather_image" src={`https://openweathermap.org/img/w/${icon}.png`} alt="icon for current weather condition" />
                     <div id="weather_description">
-                        <h3 id="weather_description">{description}</h3>
-                        <h3 id="temp_main">
-                            <span id="temp_main_val">{temp}</span> &deg; {temp_unit}</h3>
+                        <h3>{description}</h3>
+                        <h3>
+                            <span>{temp}</span> &deg; {temp_unit}</h3>
                     </div>
+                    <img id="weather_image" src={`https://openweathermap.org/img/w/${icon}.png`} alt="icon for current weather condition" />
+
                 </div>
             </div>
             <div className="currentWeather__description currentWeather-sub-font">
                 {/* <h3 id="panel_top_content">Condition: {weather?.[0].main}</h3> */}
                 <div className="temp-description">
-                    <h3>Max Temprature: {_main.temp_max} &deg; {temp_unit}</h3>
-                    <h3>Min Temprature: {_main.temp_min} &deg; {temp_unit}</h3>
-                    <h3>Feels Like: {_main.feels_like} &deg; {temp_unit}</h3>
-                    <h3>Humidity: {_main.humidity} %</h3>
+                    <h4>Max Temprature: {_main.temp_max} &deg; {temp_unit}</h4>
+                    <h4>Min Temprature: {_main.temp_min} &deg; {temp_unit}</h4>
+                    <h5>Feels Like: {_main.feels_like} &deg; {temp_unit}</h5>
+                    <h5>Humidity: {_main.humidity} %</h5>
                 </div>
                 <div className="time-description">
-                    <h3>pressure: {pressure}{pressure_unit}</h3>
-                    <h3>sunrise: {sunrise}</h3>
-                    <h3>sunset: {sunset}</h3>
-            </div>
+                    <h4>pressure: {pressure}{pressure_unit}</h4>
+                    <h4>sunrise: {sunrise}</h4>
+                    <h4>sunset: {sunset}</h4>
+                </div>
             </div>
         </section>
     );

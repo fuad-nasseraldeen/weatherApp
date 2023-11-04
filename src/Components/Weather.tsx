@@ -80,9 +80,9 @@ const WeatherApp = () => {
                 </div>
                 {visibile && <div className="weather__container-status currentWeather-font">
                     <div className="content">
-                        <p>Temperature: {temperature}°C</p>
-                        <p>City: {cityName}</p>
-                        <p>Weather Status: {weatherStatus}</p>
+                        <h4>Temperature: {temperature}°C</h4>
+                        <h4>City: {cityName}</h4>
+                        <h4>Weather Status: {weatherStatus}</h4>
                     </div>
                     {weatherIcon && <img src={`http://openweathermap.org/img/w/${weatherIcon}.png`} alt="Weather Icon" />}
                 </div>}

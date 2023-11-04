@@ -1,16 +1,10 @@
 .weather {
-    height: 100%;
-    // background-color: $color-instagram;
     background-image: url('../../../public/weather.avif');
     background-size: cover;
     background-position: bottom;
     align-self: center;
     justify-content: space-around;
-    transform: translate(0px, 4rem);
-
-    @include respond(tab-port) {
-        transform: none
-    }
+    height: 50vh;
 
     &__container {
         display: flex;
@@ -23,14 +17,14 @@
         }
 
         &-status {
-            background: rgba($color-white, .5);
-            height: 30rem;
-            width: 80rem;
+            background: rgba(255, 255, 255, 0.6);
+            height: 25%;
+            width: 80%;
             display: flex;
             align-self: center;
             justify-self: center;
             justify-content: space-around;
-            border-radius: 5rem;
+            border-radius: 3rem;
             grid-auto-flow: column;
             position: absolute;
             // top: 50%;
@@ -38,9 +32,10 @@
             transform: translate(-50%, 0%);
 
             @include respond(phone) {
-                width: 75%;
+                position: inherit;
+                width: 150%;
                 height: 25rem;
-                transform: translate(-50%, 20%);
+                transform: translate(20%, 20%);
             }
 
             .content {
